@@ -14,8 +14,11 @@ import jax.numpy as jnp
 def make_prng_key(seed):
     return jax.random.PRNGKey(seed)
 
-# Step 2 - split_prng_key (not yet solved)
-# TODO: implement
+# Step 2 - split_prng_key
+import jax
+
+def split_prng_key(key, num):
+    return jax.random.split(key, num)
 
 # Step 3 - sample_normal_matrix (not yet solved)
 # TODO: implement
