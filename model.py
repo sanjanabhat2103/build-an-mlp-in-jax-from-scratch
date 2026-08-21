@@ -39,8 +39,9 @@ def sample_input_features(key, batch_size, num_features):
 def assign_class_labels(inputs, num_classes):
     return jnp.argmax(inputs[:, :num_classes], axis = 1).astype(jnp.int32)
 
-# Step 6 - one_hot_encode_labels (not yet solved)
-# TODO: implement
+# Step 6 - one_hot_encode_labels
+def one_hot_encode_labels(labels, num_classes):
+    return jax.nn.one_hot(labels, num_classes)
 
 # Step 7 - init_linear_layer (not yet solved)
 # TODO: implement
