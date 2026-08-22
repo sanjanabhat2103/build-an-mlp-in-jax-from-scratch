@@ -59,8 +59,11 @@ def init_mlp_params(key, layer_sizes, scale=0.1):
     layers = [init_linear_layer(layer_key, in_dim, out_dim, scale) for layer_key, (in_dim, out_dim) in zip(keys, zip(layer_sizes[: -1], layer_sizes[1: ]))]
     return layers
 
-# Step 9 - linear_forward (not yet solved)
-# TODO: implement
+# Step 9 - linear_forward
+def linear_forward(x, layer_params):
+   W = layer_params["W"]
+   b = layer_params["b"]
+   return x @ W + b
 
 # Step 10 - relu_activation (not yet solved)
 # TODO: implement
