@@ -123,8 +123,12 @@ import jax.numpy as jnp
 def compute_param_grads(params, x, one_hot_targets):
     return jax.grad(loss_fn_of_params)(params, x, one_hot_targets)
 
-# Step 18 - sgd_update_params (not yet solved)
-# TODO: implement
+# Step 18 - sgd_update_params
+import jax
+import jax.numpy as jnp
+
+def sgd_update_params(params, grads, learning_rate):
+    return [{"W": layer["W"] - learning_rate * grad["W"], "b": layer["b"] - learning_rate * grad["b"]} for layer, grad in zip(params, grads)]
 
 # Step 19 - training_step (not yet solved)
 # TODO: implement
